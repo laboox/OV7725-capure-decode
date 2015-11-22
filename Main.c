@@ -29,6 +29,7 @@ int main(){
     unsigned int i,j;
     unsigned char bytes[2];
     unsigned char image[160][120];
+
     int  fd = serialOpen("/dev/ttyUSB1", 115200);
     FILE* filefd = fopen("./image.ppm", "w");
     unsigned char* bufptr;
@@ -38,8 +39,6 @@ int main(){
     printf("size: %d\npackets count: %d\n", picSize, packNum);
     unsigned char* imgBuffer = (unsigned char*) malloc((picSize+1)*sizeof(unsigned char));
     readImage(fd, imgBuffer, picSize, packNum); 
-//    fwrite(imgBuffer, sizeof(unsigned char), picSize, filefd);
-//    fclose(filefd);
     serialClose(fd);
     njInit();
     if (njDecode(imgBuffer, picSize)) {

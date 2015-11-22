@@ -11,7 +11,7 @@
 #define RES_160X128     0x31
 #define RES_320X240     0x32
 #define RES_640X480     0x33
-//Only for 1.3MGP cameras
+// Only for 1.3MGP cameras
 #define RES_1280X1024   0x34
 
 char sendShot(int fd, unsigned char resolution);

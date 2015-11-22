@@ -20,7 +20,7 @@ char sendShot(int fd, unsigned char resolution){
         return -1;
     }
     if(memcmp(buffer, ACK, 4) == 0)
-        return 1;
+        return 0;
     else{
         return -1;
     }
@@ -32,6 +32,7 @@ char readImageDetails(int fd, unsigned int* picSize, unsigned int* packNum){
         return -1;
     *picSize = buffer[6] << 24 | buffer[5] << 16 | buffer[4] << 8 | buffer [3];
     *packNum = buffer[8] << 8 | buffer [7];
+    return 0;
 }
 
 char readImage(int fd, unsigned char* img, unsigned int picSize, unsigned int packNum){
@@ -59,5 +60,5 @@ char readImage(int fd, unsigned char* img, unsigned int picSize, unsigned int pa
         serialDataRead(fd, &bytes, 1);
         serialDataRead(fd, &bytes, 1);
     }
-    return 1;
+    return 0;
 }
