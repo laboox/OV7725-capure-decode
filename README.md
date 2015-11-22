@@ -21,10 +21,10 @@ If you are using this code on other platforms like Arduino or Nios. *you have to
 You have to send a shot order to the camera using ``sendShot(fd, resolution)`` function. By this function the camera captures an image and stores it in its memory.
 You can capture images in four different resolutions:
 
-* 160\*128 *RES_160X128* 1
-* 320\*240 *RES_320X240* 2
-* 640\*480 *RES_640X480* 3
-* 1280\*1024 *RES_1280X1024* (only for 1.3MGP cameras) 4
+* 160\*128 *RES_160X128* 
+* 320\*240 *RES_320X240* 
+* 640\*480 *RES_640X480* 
+* 1280\*1024 *RES_1280X1024* (only for 1.3MGP cameras) 
 
 ### Read details
 After sending the ``sendShot`` command. You have to read the image details. ``readImageDetails(fd, picture size, frames count)`` will tell you the image size and the number of frames that the camera will send you.
