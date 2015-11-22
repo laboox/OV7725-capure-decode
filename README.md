@@ -25,6 +25,7 @@ You can capture images in four different resolutions:
 * 320\*240 *RES_320X240* 2
 * 640\*480 *RES_640X480* 3
 * 1280\*1024 *RES_1280X1024* (only for 1.3MGP cameras) 4
+
 ### Read details
 After sending the ``sendShot`` command. You have to read the image details. ``readImageDetails(fd, picture size, frames count)`` will tell you the image size and the number of frames that the camera will send you.
 ### Read Image
